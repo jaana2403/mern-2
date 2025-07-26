@@ -1,0 +1,154 @@
+/* Navbar Styles */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(250, 204, 21, 0.2);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+/* Logo Section */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation Buttons */
+.navbar-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.navbar-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Login Button */
+.login-btn {
+  background: transparent;
+  color: #facc15;
+  border: 2px solid #facc15;
+}
+
+.login-btn:hover {
+  background: rgba(250, 204, 21, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(250, 204, 21, 0.3);
+}
+
+/* Sign Up Button */
+.signup-btn {
+  background: linear-gradient(135deg, #facc15 0%, #eab308 100%);
+  color: #000;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 15px rgba(250, 204, 21, 0.3);
+}
+
+.signup-btn:hover {
+  background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(250, 204, 21, 0.4);
+}
+
+/* Ripple Effect */
+.navbar-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.navbar-btn:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 1rem;
+    height: 70px;
+  }
+  
+  .logo-img {
+    height: 40px;
+  }
+  
+  .navbar-buttons {
+    gap: 0.5rem;
+  }
+  
+  .navbar-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0 0.5rem;
+    height: 65px;
+  }
+  
+  .logo-img {
+    height: 35px;
+  }
+  
+  .navbar-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Navbar Animation on Scroll */
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.98);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Link Styles */
+.navbar-logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
